@@ -1,0 +1,230 @@
+[
+{
+  "directory": "H:/1stproj/build",
+  "command": "C:\\ProgramData\\mingw64\\mingw64\\bin\\g++.exe -DGRAPHICS_API_OPENGL_33 -DPLATFORM_DESKTOP -DSQLITE_ENABLE_COLUMN_METADATA @CMakeFiles/RayLibTemplate.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\RayLibTemplate.dir\\mus\\helper.cpp.obj -c H:\\1stproj\\mus\\helper.cpp",
+  "file": "H:/1stproj/mus/helper.cpp",
+  "output": "CMakeFiles/RayLibTemplate.dir/mus/helper.cpp.obj"
+},
+{
+  "directory": "H:/1stproj/build",
+  "command": "C:\\ProgramData\\mingw64\\mingw64\\bin\\g++.exe -DGRAPHICS_API_OPENGL_33 -DPLATFORM_DESKTOP -DSQLITE_ENABLE_COLUMN_METADATA @CMakeFiles/RayLibTemplate.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\RayLibTemplate.dir\\mus\\main.cpp.obj -c H:\\1stproj\\mus\\main.cpp",
+  "file": "H:/1stproj/mus/main.cpp",
+  "output": "CMakeFiles/RayLibTemplate.dir/mus/main.cpp.obj"
+},
+{
+  "directory": "H:/1stproj/build/libs/SQLiteCpp",
+  "command": "C:\\ProgramData\\mingw64\\mingw64\\bin\\g++.exe -DSQLITE_ENABLE_COLUMN_METADATA @CMakeFiles/SQLiteCpp.dir/includes_CXX.rsp  -Wall -Wextra -Wpedantic -Wswitch-enum -Wshadow -Wno-long-long -g -std=gnu++17 -o CMakeFiles\\SQLiteCpp.dir\\src\\Backup.cpp.obj -c H:\\1stproj\\libs\\SQLiteCpp\\src\\Backup.cpp",
+  "file": "H:/1stproj/libs/SQLiteCpp/src/Backup.cpp",
+  "output": "libs/SQLiteCpp/CMakeFiles/SQLiteCpp.dir/src/Backup.cpp.obj"
+},
+{
+  "directory": "H:/1stproj/build/libs/SQLiteCpp",
+  "command": "C:\\ProgramData\\mingw64\\mingw64\\bin\\g++.exe -DSQLITE_ENABLE_COLUMN_METADATA @CMakeFiles/SQLiteCpp.dir/includes_CXX.rsp  -Wall -Wextra -Wpedantic -Wswitch-enum -Wshadow -Wno-long-long -g -std=gnu++17 -o CMakeFiles\\SQLiteCpp.dir\\src\\Column.cpp.obj -c H:\\1stproj\\libs\\SQLiteCpp\\src\\Column.cpp",
+  "file": "H:/1stproj/libs/SQLiteCpp/src/Column.cpp",
+  "output": "libs/SQLiteCpp/CMakeFiles/SQLiteCpp.dir/src/Column.cpp.obj"
+},
+{
+  "directory": "H:/1stproj/build/libs/SQLiteCpp",
+  "command": "C:\\ProgramData\\mingw64\\mingw64\\bin\\g++.exe -DSQLITE_ENABLE_COLUMN_METADATA @CMakeFiles/SQLiteCpp.dir/includes_CXX.rsp  -Wall -Wextra -Wpedantic -Wswitch-enum -Wshadow -Wno-long-long -g -std=gnu++17 -o CMakeFiles\\SQLiteCpp.dir\\src\\Database.cpp.obj -c H:\\1stproj\\libs\\SQLiteCpp\\src\\Database.cpp",
+  "file": "H:/1stproj/libs/SQLiteCpp/src/Database.cpp",
+  "output": "libs/SQLiteCpp/CMakeFiles/SQLiteCpp.dir/src/Database.cpp.obj"
+},
+{
+  "directory": "H:/1stproj/build/libs/SQLiteCpp",
+  "command": "C:\\ProgramData\\mingw64\\mingw64\\bin\\g++.exe -DSQLITE_ENABLE_COLUMN_METADATA @CMakeFiles/SQLiteCpp.dir/includes_CXX.rsp  -Wall -Wextra -Wpedantic -Wswitch-enum -Wshadow -Wno-long-long -g -std=gnu++17 -o CMakeFiles\\SQLiteCpp.dir\\src\\Exception.cpp.obj -c H:\\1stproj\\libs\\SQLiteCpp\\src\\Exception.cpp",
+  "file": "H:/1stproj/libs/SQLiteCpp/src/Exception.cpp",
+  "output": "libs/SQLiteCpp/CMakeFiles/SQLiteCpp.dir/src/Exception.cpp.obj"
+},
+{
+  "directory": "H:/1stproj/build/libs/SQLiteCpp",
+  "command": "C:\\ProgramData\\mingw64\\mingw64\\bin\\g++.exe -DSQLITE_ENABLE_COLUMN_METADATA @CMakeFiles/SQLiteCpp.dir/includes_CXX.rsp  -Wall -Wextra -Wpedantic -Wswitch-enum -Wshadow -Wno-long-long -g -std=gnu++17 -o CMakeFiles\\SQLiteCpp.dir\\src\\Savepoint.cpp.obj -c H:\\1stproj\\libs\\SQLiteCpp\\src\\Savepoint.cpp",
+  "file": "H:/1stproj/libs/SQLiteCpp/src/Savepoint.cpp",
+  "output": "libs/SQLiteCpp/CMakeFiles/SQLiteCpp.dir/src/Savepoint.cpp.obj"
+},
+{
+  "directory": "H:/1stproj/build/libs/SQLiteCpp",
+  "command": "C:\\ProgramData\\mingw64\\mingw64\\bin\\g++.exe -DSQLITE_ENABLE_COLUMN_METADATA @CMakeFiles/SQLiteCpp.dir/includes_CXX.rsp  -Wall -Wextra -Wpedantic -Wswitch-enum -Wshadow -Wno-long-long -g -std=gnu++17 -o CMakeFiles\\SQLiteCpp.dir\\src\\Statement.cpp.obj -c H:\\1stproj\\libs\\SQLiteCpp\\src\\Statement.cpp",
+  "file": "H:/1stproj/libs/SQLiteCpp/src/Statement.cpp",
+  "output": "libs/SQLiteCpp/CMakeFiles/SQLiteCpp.dir/src/Statement.cpp.obj"
+},
+{
+  "directory": "H:/1stproj/build/libs/SQLiteCpp",
+  "command": "C:\\ProgramData\\mingw64\\mingw64\\bin\\g++.exe -DSQLITE_ENABLE_COLUMN_METADATA @CMakeFiles/SQLiteCpp.dir/includes_CXX.rsp  -Wall -Wextra -Wpedantic -Wswitch-enum -Wshadow -Wno-long-long -g -std=gnu++17 -o CMakeFiles\\SQLiteCpp.dir\\src\\Transaction.cpp.obj -c H:\\1stproj\\libs\\SQLiteCpp\\src\\Transaction.cpp",
+  "file": "H:/1stproj/libs/SQLiteCpp/src/Transaction.cpp",
+  "output": "libs/SQLiteCpp/CMakeFiles/SQLiteCpp.dir/src/Transaction.cpp.obj"
+},
+{
+  "directory": "H:/1stproj/build/libs/SQLiteCpp/sqlite3",
+  "command": "C:\\ProgramData\\mingw64\\mingw64\\bin\\gcc.exe -DSQLITE_ENABLE_COLUMN_METADATA @CMakeFiles/sqlite3.dir/includes_C.rsp -g -o CMakeFiles\\sqlite3.dir\\sqlite3.c.obj -c H:\\1stproj\\libs\\SQLiteCpp\\sqlite3\\sqlite3.c",
+  "file": "H:/1stproj/libs/SQLiteCpp/sqlite3/sqlite3.c",
+  "output": "libs/SQLiteCpp/sqlite3/CMakeFiles/sqlite3.dir/sqlite3.c.obj"
+},
+{
+  "directory": "H:/1stproj/build/libs/raylib/raylib",
+  "command": "C:\\ProgramData\\mingw64\\mingw64\\bin\\gcc.exe -DGRAPHICS_API_OPENGL_33 -DPLATFORM_DESKTOP -D_CRT_SECURE_NO_WARNINGS @CMakeFiles/raylib.dir/includes_C.rsp -fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith  -g -std=gnu99 -o CMakeFiles\\raylib.dir\\raudio.c.obj -c H:\\1stproj\\libs\\raylib-5.5\\src\\raudio.c",
+  "file": "H:/1stproj/libs/raylib-5.5/src/raudio.c",
+  "output": "libs/raylib/raylib/CMakeFiles/raylib.dir/raudio.c.obj"
+},
+{
+  "directory": "H:/1stproj/build/libs/raylib/raylib",
+  "command": "C:\\ProgramData\\mingw64\\mingw64\\bin\\gcc.exe -DGRAPHICS_API_OPENGL_33 -DPLATFORM_DESKTOP -D_CRT_SECURE_NO_WARNINGS @CMakeFiles/raylib.dir/includes_C.rsp -fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith  -g -std=gnu99 -o CMakeFiles\\raylib.dir\\rcore.c.obj -c H:\\1stproj\\libs\\raylib-5.5\\src\\rcore.c",
+  "file": "H:/1stproj/libs/raylib-5.5/src/rcore.c",
+  "output": "libs/raylib/raylib/CMakeFiles/raylib.dir/rcore.c.obj"
+},
+{
+  "directory": "H:/1stproj/build/libs/raylib/raylib",
+  "command": "C:\\ProgramData\\mingw64\\mingw64\\bin\\gcc.exe -DGRAPHICS_API_OPENGL_33 -DPLATFORM_DESKTOP -D_CRT_SECURE_NO_WARNINGS @CMakeFiles/raylib.dir/includes_C.rsp -fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith  -g -std=gnu99 -o CMakeFiles\\raylib.dir\\rmodels.c.obj -c H:\\1stproj\\libs\\raylib-5.5\\src\\rmodels.c",
+  "file": "H:/1stproj/libs/raylib-5.5/src/rmodels.c",
+  "output": "libs/raylib/raylib/CMakeFiles/raylib.dir/rmodels.c.obj"
+},
+{
+  "directory": "H:/1stproj/build/libs/raylib/raylib",
+  "command": "C:\\ProgramData\\mingw64\\mingw64\\bin\\gcc.exe -DGRAPHICS_API_OPENGL_33 -DPLATFORM_DESKTOP -D_CRT_SECURE_NO_WARNINGS @CMakeFiles/raylib.dir/includes_C.rsp -fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith  -g -std=gnu99 -o CMakeFiles\\raylib.dir\\rshapes.c.obj -c H:\\1stproj\\libs\\raylib-5.5\\src\\rshapes.c",
+  "file": "H:/1stproj/libs/raylib-5.5/src/rshapes.c",
+  "output": "libs/raylib/raylib/CMakeFiles/raylib.dir/rshapes.c.obj"
+},
+{
+  "directory": "H:/1stproj/build/libs/raylib/raylib",
+  "command": "C:\\ProgramData\\mingw64\\mingw64\\bin\\gcc.exe -DGRAPHICS_API_OPENGL_33 -DPLATFORM_DESKTOP -D_CRT_SECURE_NO_WARNINGS @CMakeFiles/raylib.dir/includes_C.rsp -fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith  -g -std=gnu99 -o CMakeFiles\\raylib.dir\\rtext.c.obj -c H:\\1stproj\\libs\\raylib-5.5\\src\\rtext.c",
+  "file": "H:/1stproj/libs/raylib-5.5/src/rtext.c",
+  "output": "libs/raylib/raylib/CMakeFiles/raylib.dir/rtext.c.obj"
+},
+{
+  "directory": "H:/1stproj/build/libs/raylib/raylib",
+  "command": "C:\\ProgramData\\mingw64\\mingw64\\bin\\gcc.exe -DGRAPHICS_API_OPENGL_33 -DPLATFORM_DESKTOP -D_CRT_SECURE_NO_WARNINGS @CMakeFiles/raylib.dir/includes_C.rsp -fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith  -g -std=gnu99 -o CMakeFiles\\raylib.dir\\rtextures.c.obj -c H:\\1stproj\\libs\\raylib-5.5\\src\\rtextures.c",
+  "file": "H:/1stproj/libs/raylib-5.5/src/rtextures.c",
+  "output": "libs/raylib/raylib/CMakeFiles/raylib.dir/rtextures.c.obj"
+},
+{
+  "directory": "H:/1stproj/build/libs/raylib/raylib",
+  "command": "C:\\ProgramData\\mingw64\\mingw64\\bin\\gcc.exe -DGRAPHICS_API_OPENGL_33 -DPLATFORM_DESKTOP -D_CRT_SECURE_NO_WARNINGS @CMakeFiles/raylib.dir/includes_C.rsp -fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith  -g -std=gnu99 -o CMakeFiles\\raylib.dir\\utils.c.obj -c H:\\1stproj\\libs\\raylib-5.5\\src\\utils.c",
+  "file": "H:/1stproj/libs/raylib-5.5/src/utils.c",
+  "output": "libs/raylib/raylib/CMakeFiles/raylib.dir/utils.c.obj"
+},
+{
+  "directory": "H:/1stproj/build/libs/raylib/raylib/external/glfw/src",
+  "command": "C:\\ProgramData\\mingw64\\mingw64\\bin\\gcc.exe -DUNICODE -DWINVER=0x0501 -D_GLFW_WIN32 -D_UNICODE @CMakeFiles/glfw.dir/includes_C.rsp -fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith  -g -std=c99 -Wall -o CMakeFiles\\glfw.dir\\context.c.obj -c H:\\1stproj\\libs\\raylib-5.5\\src\\external\\glfw\\src\\context.c",
+  "file": "H:/1stproj/libs/raylib-5.5/src/external/glfw/src/context.c",
+  "output": "libs/raylib/raylib/external/glfw/src/CMakeFiles/glfw.dir/context.c.obj"
+},
+{
+  "directory": "H:/1stproj/build/libs/raylib/raylib/external/glfw/src",
+  "command": "C:\\ProgramData\\mingw64\\mingw64\\bin\\gcc.exe -DUNICODE -DWINVER=0x0501 -D_GLFW_WIN32 -D_UNICODE @CMakeFiles/glfw.dir/includes_C.rsp -fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith  -g -std=c99 -Wall -o CMakeFiles\\glfw.dir\\init.c.obj -c H:\\1stproj\\libs\\raylib-5.5\\src\\external\\glfw\\src\\init.c",
+  "file": "H:/1stproj/libs/raylib-5.5/src/external/glfw/src/init.c",
+  "output": "libs/raylib/raylib/external/glfw/src/CMakeFiles/glfw.dir/init.c.obj"
+},
+{
+  "directory": "H:/1stproj/build/libs/raylib/raylib/external/glfw/src",
+  "command": "C:\\ProgramData\\mingw64\\mingw64\\bin\\gcc.exe -DUNICODE -DWINVER=0x0501 -D_GLFW_WIN32 -D_UNICODE @CMakeFiles/glfw.dir/includes_C.rsp -fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith  -g -std=c99 -Wall -o CMakeFiles\\glfw.dir\\input.c.obj -c H:\\1stproj\\libs\\raylib-5.5\\src\\external\\glfw\\src\\input.c",
+  "file": "H:/1stproj/libs/raylib-5.5/src/external/glfw/src/input.c",
+  "output": "libs/raylib/raylib/external/glfw/src/CMakeFiles/glfw.dir/input.c.obj"
+},
+{
+  "directory": "H:/1stproj/build/libs/raylib/raylib/external/glfw/src",
+  "command": "C:\\ProgramData\\mingw64\\mingw64\\bin\\gcc.exe -DUNICODE -DWINVER=0x0501 -D_GLFW_WIN32 -D_UNICODE @CMakeFiles/glfw.dir/includes_C.rsp -fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith  -g -std=c99 -Wall -o CMakeFiles\\glfw.dir\\monitor.c.obj -c H:\\1stproj\\libs\\raylib-5.5\\src\\external\\glfw\\src\\monitor.c",
+  "file": "H:/1stproj/libs/raylib-5.5/src/external/glfw/src/monitor.c",
+  "output": "libs/raylib/raylib/external/glfw/src/CMakeFiles/glfw.dir/monitor.c.obj"
+},
+{
+  "directory": "H:/1stproj/build/libs/raylib/raylib/external/glfw/src",
+  "command": "C:\\ProgramData\\mingw64\\mingw64\\bin\\gcc.exe -DUNICODE -DWINVER=0x0501 -D_GLFW_WIN32 -D_UNICODE @CMakeFiles/glfw.dir/includes_C.rsp -fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith  -g -std=c99 -Wall -o CMakeFiles\\glfw.dir\\platform.c.obj -c H:\\1stproj\\libs\\raylib-5.5\\src\\external\\glfw\\src\\platform.c",
+  "file": "H:/1stproj/libs/raylib-5.5/src/external/glfw/src/platform.c",
+  "output": "libs/raylib/raylib/external/glfw/src/CMakeFiles/glfw.dir/platform.c.obj"
+},
+{
+  "directory": "H:/1stproj/build/libs/raylib/raylib/external/glfw/src",
+  "command": "C:\\ProgramData\\mingw64\\mingw64\\bin\\gcc.exe -DUNICODE -DWINVER=0x0501 -D_GLFW_WIN32 -D_UNICODE @CMakeFiles/glfw.dir/includes_C.rsp -fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith  -g -std=c99 -Wall -o CMakeFiles\\glfw.dir\\vulkan.c.obj -c H:\\1stproj\\libs\\raylib-5.5\\src\\external\\glfw\\src\\vulkan.c",
+  "file": "H:/1stproj/libs/raylib-5.5/src/external/glfw/src/vulkan.c",
+  "output": "libs/raylib/raylib/external/glfw/src/CMakeFiles/glfw.dir/vulkan.c.obj"
+},
+{
+  "directory": "H:/1stproj/build/libs/raylib/raylib/external/glfw/src",
+  "command": "C:\\ProgramData\\mingw64\\mingw64\\bin\\gcc.exe -DUNICODE -DWINVER=0x0501 -D_GLFW_WIN32 -D_UNICODE @CMakeFiles/glfw.dir/includes_C.rsp -fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith  -g -std=c99 -Wall -o CMakeFiles\\glfw.dir\\window.c.obj -c H:\\1stproj\\libs\\raylib-5.5\\src\\external\\glfw\\src\\window.c",
+  "file": "H:/1stproj/libs/raylib-5.5/src/external/glfw/src/window.c",
+  "output": "libs/raylib/raylib/external/glfw/src/CMakeFiles/glfw.dir/window.c.obj"
+},
+{
+  "directory": "H:/1stproj/build/libs/raylib/raylib/external/glfw/src",
+  "command": "C:\\ProgramData\\mingw64\\mingw64\\bin\\gcc.exe -DUNICODE -DWINVER=0x0501 -D_GLFW_WIN32 -D_UNICODE @CMakeFiles/glfw.dir/includes_C.rsp -fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith  -g -std=c99 -Wall -o CMakeFiles\\glfw.dir\\egl_context.c.obj -c H:\\1stproj\\libs\\raylib-5.5\\src\\external\\glfw\\src\\egl_context.c",
+  "file": "H:/1stproj/libs/raylib-5.5/src/external/glfw/src/egl_context.c",
+  "output": "libs/raylib/raylib/external/glfw/src/CMakeFiles/glfw.dir/egl_context.c.obj"
+},
+{
+  "directory": "H:/1stproj/build/libs/raylib/raylib/external/glfw/src",
+  "command": "C:\\ProgramData\\mingw64\\mingw64\\bin\\gcc.exe -DUNICODE -DWINVER=0x0501 -D_GLFW_WIN32 -D_UNICODE @CMakeFiles/glfw.dir/includes_C.rsp -fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith  -g -std=c99 -Wall -o CMakeFiles\\glfw.dir\\osmesa_context.c.obj -c H:\\1stproj\\libs\\raylib-5.5\\src\\external\\glfw\\src\\osmesa_context.c",
+  "file": "H:/1stproj/libs/raylib-5.5/src/external/glfw/src/osmesa_context.c",
+  "output": "libs/raylib/raylib/external/glfw/src/CMakeFiles/glfw.dir/osmesa_context.c.obj"
+},
+{
+  "directory": "H:/1stproj/build/libs/raylib/raylib/external/glfw/src",
+  "command": "C:\\ProgramData\\mingw64\\mingw64\\bin\\gcc.exe -DUNICODE -DWINVER=0x0501 -D_GLFW_WIN32 -D_UNICODE @CMakeFiles/glfw.dir/includes_C.rsp -fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith  -g -std=c99 -Wall -o CMakeFiles\\glfw.dir\\null_init.c.obj -c H:\\1stproj\\libs\\raylib-5.5\\src\\external\\glfw\\src\\null_init.c",
+  "file": "H:/1stproj/libs/raylib-5.5/src/external/glfw/src/null_init.c",
+  "output": "libs/raylib/raylib/external/glfw/src/CMakeFiles/glfw.dir/null_init.c.obj"
+},
+{
+  "directory": "H:/1stproj/build/libs/raylib/raylib/external/glfw/src",
+  "command": "C:\\ProgramData\\mingw64\\mingw64\\bin\\gcc.exe -DUNICODE -DWINVER=0x0501 -D_GLFW_WIN32 -D_UNICODE @CMakeFiles/glfw.dir/includes_C.rsp -fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith  -g -std=c99 -Wall -o CMakeFiles\\glfw.dir\\null_monitor.c.obj -c H:\\1stproj\\libs\\raylib-5.5\\src\\external\\glfw\\src\\null_monitor.c",
+  "file": "H:/1stproj/libs/raylib-5.5/src/external/glfw/src/null_monitor.c",
+  "output": "libs/raylib/raylib/external/glfw/src/CMakeFiles/glfw.dir/null_monitor.c.obj"
+},
+{
+  "directory": "H:/1stproj/build/libs/raylib/raylib/external/glfw/src",
+  "command": "C:\\ProgramData\\mingw64\\mingw64\\bin\\gcc.exe -DUNICODE -DWINVER=0x0501 -D_GLFW_WIN32 -D_UNICODE @CMakeFiles/glfw.dir/includes_C.rsp -fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith  -g -std=c99 -Wall -o CMakeFiles\\glfw.dir\\null_window.c.obj -c H:\\1stproj\\libs\\raylib-5.5\\src\\external\\glfw\\src\\null_window.c",
+  "file": "H:/1stproj/libs/raylib-5.5/src/external/glfw/src/null_window.c",
+  "output": "libs/raylib/raylib/external/glfw/src/CMakeFiles/glfw.dir/null_window.c.obj"
+},
+{
+  "directory": "H:/1stproj/build/libs/raylib/raylib/external/glfw/src",
+  "command": "C:\\ProgramData\\mingw64\\mingw64\\bin\\gcc.exe -DUNICODE -DWINVER=0x0501 -D_GLFW_WIN32 -D_UNICODE @CMakeFiles/glfw.dir/includes_C.rsp -fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith  -g -std=c99 -Wall -o CMakeFiles\\glfw.dir\\null_joystick.c.obj -c H:\\1stproj\\libs\\raylib-5.5\\src\\external\\glfw\\src\\null_joystick.c",
+  "file": "H:/1stproj/libs/raylib-5.5/src/external/glfw/src/null_joystick.c",
+  "output": "libs/raylib/raylib/external/glfw/src/CMakeFiles/glfw.dir/null_joystick.c.obj"
+},
+{
+  "directory": "H:/1stproj/build/libs/raylib/raylib/external/glfw/src",
+  "command": "C:\\ProgramData\\mingw64\\mingw64\\bin\\gcc.exe -DUNICODE -DWINVER=0x0501 -D_GLFW_WIN32 -D_UNICODE @CMakeFiles/glfw.dir/includes_C.rsp -fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith  -g -std=c99 -Wall -o CMakeFiles\\glfw.dir\\win32_module.c.obj -c H:\\1stproj\\libs\\raylib-5.5\\src\\external\\glfw\\src\\win32_module.c",
+  "file": "H:/1stproj/libs/raylib-5.5/src/external/glfw/src/win32_module.c",
+  "output": "libs/raylib/raylib/external/glfw/src/CMakeFiles/glfw.dir/win32_module.c.obj"
+},
+{
+  "directory": "H:/1stproj/build/libs/raylib/raylib/external/glfw/src",
+  "command": "C:\\ProgramData\\mingw64\\mingw64\\bin\\gcc.exe -DUNICODE -DWINVER=0x0501 -D_GLFW_WIN32 -D_UNICODE @CMakeFiles/glfw.dir/includes_C.rsp -fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith  -g -std=c99 -Wall -o CMakeFiles\\glfw.dir\\win32_time.c.obj -c H:\\1stproj\\libs\\raylib-5.5\\src\\external\\glfw\\src\\win32_time.c",
+  "file": "H:/1stproj/libs/raylib-5.5/src/external/glfw/src/win32_time.c",
+  "output": "libs/raylib/raylib/external/glfw/src/CMakeFiles/glfw.dir/win32_time.c.obj"
+},
+{
+  "directory": "H:/1stproj/build/libs/raylib/raylib/external/glfw/src",
+  "command": "C:\\ProgramData\\mingw64\\mingw64\\bin\\gcc.exe -DUNICODE -DWINVER=0x0501 -D_GLFW_WIN32 -D_UNICODE @CMakeFiles/glfw.dir/includes_C.rsp -fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith  -g -std=c99 -Wall -o CMakeFiles\\glfw.dir\\win32_thread.c.obj -c H:\\1stproj\\libs\\raylib-5.5\\src\\external\\glfw\\src\\win32_thread.c",
+  "file": "H:/1stproj/libs/raylib-5.5/src/external/glfw/src/win32_thread.c",
+  "output": "libs/raylib/raylib/external/glfw/src/CMakeFiles/glfw.dir/win32_thread.c.obj"
+},
+{
+  "directory": "H:/1stproj/build/libs/raylib/raylib/external/glfw/src",
+  "command": "C:\\ProgramData\\mingw64\\mingw64\\bin\\gcc.exe -DUNICODE -DWINVER=0x0501 -D_GLFW_WIN32 -D_UNICODE @CMakeFiles/glfw.dir/includes_C.rsp -fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith  -g -std=c99 -Wall -o CMakeFiles\\glfw.dir\\win32_init.c.obj -c H:\\1stproj\\libs\\raylib-5.5\\src\\external\\glfw\\src\\win32_init.c",
+  "file": "H:/1stproj/libs/raylib-5.5/src/external/glfw/src/win32_init.c",
+  "output": "libs/raylib/raylib/external/glfw/src/CMakeFiles/glfw.dir/win32_init.c.obj"
+},
+{
+  "directory": "H:/1stproj/build/libs/raylib/raylib/external/glfw/src",
+  "command": "C:\\ProgramData\\mingw64\\mingw64\\bin\\gcc.exe -DUNICODE -DWINVER=0x0501 -D_GLFW_WIN32 -D_UNICODE @CMakeFiles/glfw.dir/includes_C.rsp -fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith  -g -std=c99 -Wall -o CMakeFiles\\glfw.dir\\win32_joystick.c.obj -c H:\\1stproj\\libs\\raylib-5.5\\src\\external\\glfw\\src\\win32_joystick.c",
+  "file": "H:/1stproj/libs/raylib-5.5/src/external/glfw/src/win32_joystick.c",
+  "output": "libs/raylib/raylib/external/glfw/src/CMakeFiles/glfw.dir/win32_joystick.c.obj"
+},
+{
+  "directory": "H:/1stproj/build/libs/raylib/raylib/external/glfw/src",
+  "command": "C:\\ProgramData\\mingw64\\mingw64\\bin\\gcc.exe -DUNICODE -DWINVER=0x0501 -D_GLFW_WIN32 -D_UNICODE @CMakeFiles/glfw.dir/includes_C.rsp -fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith  -g -std=c99 -Wall -o CMakeFiles\\glfw.dir\\win32_monitor.c.obj -c H:\\1stproj\\libs\\raylib-5.5\\src\\external\\glfw\\src\\win32_monitor.c",
+  "file": "H:/1stproj/libs/raylib-5.5/src/external/glfw/src/win32_monitor.c",
+  "output": "libs/raylib/raylib/external/glfw/src/CMakeFiles/glfw.dir/win32_monitor.c.obj"
+},
+{
+  "directory": "H:/1stproj/build/libs/raylib/raylib/external/glfw/src",
+  "command": "C:\\ProgramData\\mingw64\\mingw64\\bin\\gcc.exe -DUNICODE -DWINVER=0x0501 -D_GLFW_WIN32 -D_UNICODE @CMakeFiles/glfw.dir/includes_C.rsp -fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith  -g -std=c99 -Wall -o CMakeFiles\\glfw.dir\\win32_window.c.obj -c H:\\1stproj\\libs\\raylib-5.5\\src\\external\\glfw\\src\\win32_window.c",
+  "file": "H:/1stproj/libs/raylib-5.5/src/external/glfw/src/win32_window.c",
+  "output": "libs/raylib/raylib/external/glfw/src/CMakeFiles/glfw.dir/win32_window.c.obj"
+},
+{
+  "directory": "H:/1stproj/build/libs/raylib/raylib/external/glfw/src",
+  "command": "C:\\ProgramData\\mingw64\\mingw64\\bin\\gcc.exe -DUNICODE -DWINVER=0x0501 -D_GLFW_WIN32 -D_UNICODE @CMakeFiles/glfw.dir/includes_C.rsp -fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith  -g -std=c99 -Wall -o CMakeFiles\\glfw.dir\\wgl_context.c.obj -c H:\\1stproj\\libs\\raylib-5.5\\src\\external\\glfw\\src\\wgl_context.c",
+  "file": "H:/1stproj/libs/raylib-5.5/src/external/glfw/src/wgl_context.c",
+  "output": "libs/raylib/raylib/external/glfw/src/CMakeFiles/glfw.dir/wgl_context.c.obj"
+}
+]
