@@ -8,7 +8,7 @@
 #include <cstdlib>
 #include <SQLiteCpp/SQLiteCpp.h>
 #include <SQLiteCpp/VariadicBind.h>
-
+#include <filesystem>
 #define RAYGUI_IMPLEMENTATION
 #include <raygui.h>
 
@@ -67,9 +67,9 @@ unsigned int findTrackId(const std::string &trackName, const std::vector<Track> 
 }
 
 void InserMusicBinary(SQLite::Database &db, std::string &MusTex, string nameoftrack)
-{   
+{
     Transaction transaction(db);
-    Statement insertMusicQuery{db, "INSERT INTO music(music, name) VALUES (?, ?)"};
+    Statement insertMusicQuery{db, "INSERT INTO music(music, name_music) VALUES (?, ?)"};
     insertMusicQuery.bind(1, MusTex.c_str(), MusTex.size());
     insertMusicQuery.bind(2, nameoftrack);
     insertMusicQuery.exec();
@@ -108,7 +108,9 @@ void LoadFilepathToSQL(const char *filepaths, SQLite::Database &db)
     }
     // cerr << MusTex;
     in.close();
-    
+    std::filesystem::path p(filepaths);
+    string nametrack = p.stem().string();
+
     InserMusicBinary(db, MusTex, nametrack);
 }
 std::string WStringToString(const std::wstring &wstr)
@@ -131,6 +133,9 @@ int main()
     SetMasterVolume(1);
     Sound file;
     SetTargetFPS(360);
+    Image DI = LoadImage("send.png");
+    ImageResize(&DI, 200, 200);
+    Texture2D DropImage = LoadTextureFromImage(DI);
     while (!IsAudioDeviceReady())
     {
         cout << ".";
@@ -176,6 +181,7 @@ int main()
     float prevTime = 0;
     bool mir = false;
     Music nowMusic;
+    string nametrack;
     int action = 1;
     int nowTrack = -1;
     float musicLength = 0;
@@ -185,9 +191,7 @@ int main()
     CREATE TABLE IF NOT EXISTS music (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         name_music TEXT,
-        author TEXT,
-        music BLOB,
-        cover BLOB
+        music BLOB
     );
 )");
 
@@ -206,18 +210,25 @@ int main()
         else
             mir = false;
 
-        if (IsFileDropped() )
+        if (IsFileDropped())
         {
-            FilePathList droppedFiles = LoadDroppedFiles();
-            cerr << droppedFiles.paths[0];
-            LoadFilepathToSQL(droppedFiles.paths[0], db);
+            if (CheckCollisionPointRec(GetMousePosition(), (Rectangle){1100, 100, 450, 800}))
+            {
+                FilePathList droppedFiles = LoadDroppedFiles();
+                cerr << droppedFiles.paths[0];
+                LoadFilepathToSQL(droppedFiles.paths[0], db);
 
-            tracks = getTracks(db);
-            UnloadDroppedFiles(droppedFiles); // Unload filepaths from memory
+                tracks = getTracks(db);
+                UnloadDroppedFiles(droppedFiles); // Unload filepaths from memory
+            }
+            else{
+                FilePathList droppedFiles = LoadDroppedFiles();
+                UnloadDroppedFiles(droppedFiles); // Unload filepaths from memory
+            }
         }
-        if (nowTrack != DropdownBox006Active+1)
-        {   
-            nowTrack = DropdownBox006Active+1;
+        if (nowTrack != DropdownBox006Active + 1)
+        {
+            nowTrack = DropdownBox006Active + 1;
             ToggleGroup006Active = 1;
             string *musics = ReadMusicContent(nowTrack, db);
             nowMusic = LoadMusicStreamFromMemory(".wav", (unsigned char *)musics->c_str(), musics->size());
@@ -235,10 +246,13 @@ int main()
             IsPlaying = false;
             cerr << "stop playing";
         }
-        if(action == 0){
-            SeekMusicStream(nowMusic, 0.000001);
+        if (action == 0)
+        {
+
+            SeekMusicStream(nowMusic, 0);
         }
-        if(action == 3){
+        if (action == 3)
+        {
             DropdownBox006Active++;
         }
         if ((!IsPlaying) && (action == 2))
@@ -258,7 +272,8 @@ int main()
             }
         }
         if (IsMusicValid(nowMusic))
-        {   ProgressBar005Value = GetMusicTimePlayed(nowMusic)/musicLength;
+        {
+            ProgressBar005Value = GetMusicTimePlayed(nowMusic) / musicLength;
             UpdateMusicStream(nowMusic);
         }
         SetMasterVolume(masterVol);
@@ -275,6 +290,7 @@ int main()
         {
             OpenFileDialog(winapifiles);
             LoadFilepathToSQL(WStringToString(winapifiles.back()).c_str(), db);
+            tracks = getTracks(db);
             winapifiles.clear();
         }
         // SliderBar004Value = GuiSliderBar(layoutRecs[2], NULL, NULL, SliderBar004Value, 0, 100);
@@ -284,7 +300,9 @@ int main()
         GuiToggleGroup(layoutRecs[5], "#129#;#132#;#131#;#134#", &ToggleGroup006Active);
         if (GuiDropdownBox(layoutRecs[6], getTrackNames(tracks).c_str(), &DropdownBox006Active, DropdownBox006EditMode))
             DropdownBox006EditMode = !DropdownBox006EditMode;
-
+        DrawRectangleRounded((Rectangle){1100, 100, 450, 800}, 0.2, 150, WHITE);
+        DrawRectangleRounded((Rectangle){1080, 80, 490, 840}, 0.2, 150, Color{255, 255, 255, 120});
+        DrawTexture(DropImage, 1225, 400, BLACK);
         GuiUnlock();
 
         EndDrawing();
