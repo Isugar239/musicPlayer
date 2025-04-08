@@ -125,7 +125,7 @@ int main()
     //--------------------------------------------------------------------------------------
     const int screenWidth = 1600;
     const int screenHeight = 1000;
-    InitWindow(screenWidth, screenHeight, "dvd");
+    InitWindow(screenWidth, screenHeight, "SoundOverFlow");
     // LoadFont("C:\\Users\\zakharoviz.28\\Downloads\\GenericMobileSystemNuevo.ttf");
     GuiLoadStyle("C:\\Users\\zakharoviz.28\\Downloads\\style_enefete.rgs");
     // init music player---------------------------------------------------------------------
