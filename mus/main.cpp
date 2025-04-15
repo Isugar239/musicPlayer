@@ -24,7 +24,18 @@ struct Track
     unsigned int id;
     string name;
 };
-
+string readGIF(SQLite::Database &db, int gifId)
+{
+    SQLite::Statement query(db, "SELECT image FROM images WHERE id = ?");
+    query.bind(1, gifId);
+    string gifka;
+     if (query.executeStep())
+    {
+        gifka = query.getColumn(0).getString();
+    }
+    query.reset();
+    return gifka;
+}
 string getTrackNames(const vector<Track> &tracks)
 {
     string names = "";
@@ -132,7 +143,7 @@ int main()
     InitAudioDevice();
     SetMasterVolume(1);
     Sound file;
-    SetTargetFPS(360);
+    SetTargetFPS(60);
     Image DI = LoadImage("send.png");
     ImageResize(&DI, 200, 200);
     Texture2D DropImage = LoadTextureFromImage(DI);
@@ -153,7 +164,7 @@ int main()
     Rectangle layoutRecs[8] = {
 
         (Rectangle){16, 40, 160, 608},
-        (Rectangle){0, 0, 1600, 1000},
+        (Rectangle){0, 5, 1600, 1000},
         (Rectangle){30, 160, 120, 16},
         (Rectangle){37, 585, 120, 16},
         (Rectangle){27, 106, 120, 24},
@@ -183,9 +194,16 @@ int main()
     Music nowMusic;
     string nametrack;
     int action = 1;
+    bool AP = false;
     int nowTrack = -1;
+    int speedTrack = 1;
     float musicLength = 0;
     float masterVol = 1;
+    int currentAnimFrame = 0; // Current animation frame to load and draw
+    int frameDelay = 8;
+    int frameCounter = 0;
+    int animFrames = 0;
+
     Database db("music.db3", SQLite::OPEN_READWRITE | SQLite::OPEN_CREATE);
     db.exec(R"(
     CREATE TABLE IF NOT EXISTS music (
@@ -193,22 +211,43 @@ int main()
         name_music TEXT,
         music BLOB
     );
+    CREATE TABLE IF NOT EXISTS images (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name TEXT,
+    image BLOB
+    );
 )");
 
     vector<Track> tracks;
     tracks = getTracks(db);
+    double ATimer = GetTime();
+    string gif = readGIF(db, 0);
 
+    Image imgsof LoadImageAnimFromMemory(".gif", (const unsigned char)gif, sizeof(gif), 25);
+    Texture2D SOF = LoadTextureFromImage(imgsof);
     while (!WindowShouldClose())
     {
         dt = GetTime() - prevTime;
         prevTime = GetTime();
         nullspeed = 1000.0 / 16 * dt;
-        if (GetMouseX() > 100 && GetMouseX() < 200 && GetMouseY() > 100 && GetMouseY() < 200)
+        frameCounter++;
+        if (frameCounter >= frameDelay)
         {
-            // mir = true;
+            // Move to next frame
+            // NOTE: If final frame is reached we return to first frame
+            currentAnimFrame++;
+            if (currentAnimFrame >= animFrames)
+                currentAnimFrame = 0;
+
+            // Get memory offset position for next frame data in image.data
+            int nextFrameDataOffset = imgsof.width * imgsof.height * 4 * currentAnimFrame;
+
+            // Update GPU texture data with next frame image data
+            // WARNING: Data size (frame size) and pixel format must match already created texture
+            UpdateTexture(SOF, ((unsigned char *)imgsof.data) + nextFrameDataOffset);
+
+            frameCounter = 0;
         }
-        else
-            mir = false;
 
         if (IsFileDropped())
         {
@@ -221,14 +260,17 @@ int main()
                 tracks = getTracks(db);
                 UnloadDroppedFiles(droppedFiles); // Unload filepaths from memory
             }
-            else{
+            else
+            {
                 FilePathList droppedFiles = LoadDroppedFiles();
                 UnloadDroppedFiles(droppedFiles); // Unload filepaths from memory
             }
         }
+    updateInfo:
         if (nowTrack != DropdownBox006Active + 1)
         {
             nowTrack = DropdownBox006Active + 1;
+            speedTrack = 1;
             ToggleGroup006Active = 1;
             string *musics = ReadMusicContent(nowTrack, db);
             nowMusic = LoadMusicStreamFromMemory(".wav", (unsigned char *)musics->c_str(), musics->size());
@@ -239,6 +281,24 @@ int main()
         {
             action = ToggleGroup006Active;
             cerr << "act" << action << endl;
+        }
+
+        if (IsPlaying && !IsMusicStreamPlaying(nowMusic) && action == 2)
+        {
+
+            if (AP)
+            {
+                DropdownBox006Active++;
+                cerr << "autoPlaying: " << DropdownBox006Active;
+                IsPlaying = false;
+                ToggleGroup006Active = 2;
+                action = 2;
+                goto updateInfo;
+            }
+            else
+            {
+                ToggleGroup006Active = 1;
+            }
         }
         if (action == 1 && IsPlaying)
         {
@@ -257,6 +317,7 @@ int main()
         }
         if ((!IsPlaying) && (action == 2))
         {
+
             IsPlaying = true;
             musicLength = GetMusicTimeLength(nowMusic);
             if (GetMusicTimePlayed(nowMusic) > 0)
@@ -271,12 +332,14 @@ int main()
                 PlayMusicStream(nowMusic);
             }
         }
+
         if (IsMusicValid(nowMusic))
         {
             ProgressBar005Value = GetMusicTimePlayed(nowMusic) / musicLength;
             UpdateMusicStream(nowMusic);
         }
         SetMasterVolume(masterVol);
+        SetMusicPitch(nowMusic, (float)speedTrack);
         BeginDrawing();
         ClearBackground(GetColor(GuiGetStyle(DEFAULT, BACKGROUND_COLOR)));
 
@@ -284,7 +347,6 @@ int main()
         //----------------------------------------------------------------------------------
         if (DropdownBox006EditMode)
             GuiLock();
-
         GuiGroupBox(layoutRecs[1], "Music player");
         if (GuiButton(layoutRecs[2], "#05#Open music"))
         {
@@ -293,6 +355,7 @@ int main()
             tracks = getTracks(db);
             winapifiles.clear();
         }
+
         // SliderBar004Value = GuiSliderBar(layoutRecs[2], NULL, NULL, SliderBar004Value, 0, 100);
         GuiProgressBar(layoutRecs[3], NULL, NULL, &ProgressBar005Value, 0, 1);
         GuiLabel(layoutRecs[4], "Master volume");
@@ -300,8 +363,13 @@ int main()
         GuiToggleGroup(layoutRecs[5], "#129#;#132#;#131#;#134#", &ToggleGroup006Active);
         if (GuiDropdownBox(layoutRecs[6], getTrackNames(tracks).c_str(), &DropdownBox006Active, DropdownBox006EditMode))
             DropdownBox006EditMode = !DropdownBox006EditMode;
+        GuiSpinner((Rectangle){37, 650, 120, 16}, "speed", &speedTrack, 1, 4, false);
+        GuiCheckBox((Rectangle){37, 500, 120, 16}, "AutoPlay", &AP);
+        GuiCheckBox((Rectangle){37, 520, 120, 16}, "Looping", &nowMusic.looping);
+        DrawTexture(SOF, 400, 400, WHITE);
         DrawRectangleRounded((Rectangle){1100, 100, 450, 800}, 0.2, 150, WHITE);
         DrawRectangleRounded((Rectangle){1080, 80, 490, 840}, 0.2, 150, Color{255, 255, 255, 120});
+
         DrawTexture(DropImage, 1225, 400, BLACK);
         GuiUnlock();
 
