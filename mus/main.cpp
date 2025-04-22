@@ -11,29 +11,35 @@
 #include <filesystem>
 #define RAYGUI_IMPLEMENTATION
 #include <raygui.h>
-
+#include <math.h>
 // #include "FileReader.h"
 using namespace SQLite;
 using namespace std;
 
 #include "helper.h"
 #include "main.h"
-
+static float averageVolume[120] = {0.0f};
 struct Track
 {
     unsigned int id;
     string name;
 };
+
 string readGIF(SQLite::Database &db, int gifId)
 {
+    cerr << "start reading gif" << "\n";
     SQLite::Statement query(db, "SELECT image FROM images WHERE id = ?");
     query.bind(1, gifId);
-    string gifka;
-     if (query.executeStep())
+    string gifka = "";
+    if (query.executeStep())
     {
-        gifka = query.getColumn(0).getString();
+        // cerr << query.getColumn(0);
+        gifka += query.getColumn(0).getString();
     }
     query.reset();
+    cerr << "stop reading gif" << "\n";
+
+    cerr << gifka.size();
     return gifka;
 }
 string getTrackNames(const vector<Track> &tracks)
@@ -64,7 +70,28 @@ vector<Track> getTracks(Database &db)
     query.reset();
     return tempTracks;
 }
+void ProcessAudio(void *buffer, unsigned int frames)
+{
+    float *samples = (float *)buffer; // Samples internally stored as <float>s
+    float average = 0.0f;             // Temporary average volume
 
+    for (unsigned int frame = 0; frame < frames; frame++)
+    {
+        float *left = &samples[frame * 2 + 0], *right = &samples[frame * 2 + 1];
+
+        *left = powf(fabsf(*left), 1) * ((*left < 0.0f) ? -1.0f : 1.0f);
+        *right = powf(fabsf(*right), 1) * ((*right < 0.0f) ? -1.0f : 1.0f);
+
+        average += fabsf(*left) / frames; // accumulating average volume
+        average += fabsf(*right) / frames;
+    }
+
+    // Moving history to the left
+    for (int i = 0; i < 119; i++)
+        averageVolume[i] = averageVolume[i + 1];
+
+    averageVolume[119] = average; // Adding last average value
+}
 unsigned int findTrackId(const std::string &trackName, const std::vector<Track> &tracks)
 {
     for (const auto &track : tracks)
@@ -105,6 +132,23 @@ string *ReadMusicContent(int id, SQLite::Database &db)
     musget.reset();
     return musicwave;
 }
+void updateTrack(int &nowTrack, int &DropdownBox006Active, int &speedTrack, SQLite::Database &db, Music &nowMusic, int &act)
+{
+    nowTrack = DropdownBox006Active + 1;
+    speedTrack = 1;
+    string *musics = ReadMusicContent(nowTrack, db);
+    nowMusic = LoadMusicStreamFromMemory(".wav", (unsigned char *)musics->c_str(), musics->size());
+
+    if (!IsMusicValid(nowMusic))
+    {
+        cerr << "cannot read music content cause:\n";
+        DropdownBox006Active -= 1;
+        nowTrack -= 1;
+        act = 1;
+    }
+    nowMusic.looping = false;
+    cerr << "track" << nowTrack << endl;
+}
 void LoadFilepathToSQL(const char *filepaths, SQLite::Database &db)
 {
     string MusTex;
@@ -142,6 +186,7 @@ int main()
     // init music player---------------------------------------------------------------------
     InitAudioDevice();
     SetMasterVolume(1);
+    AttachAudioMixedProcessor(ProcessAudio);
     Sound file;
     SetTargetFPS(60);
     Image DI = LoadImage("send.png");
@@ -202,7 +247,6 @@ int main()
     int currentAnimFrame = 0; // Current animation frame to load and draw
     int frameDelay = 8;
     int frameCounter = 0;
-    int animFrames = 0;
 
     Database db("music.db3", SQLite::OPEN_READWRITE | SQLite::OPEN_CREATE);
     db.exec(R"(
@@ -221,9 +265,9 @@ int main()
     vector<Track> tracks;
     tracks = getTracks(db);
     double ATimer = GetTime();
-    string gif = readGIF(db, 0);
-
-    Image imgsof LoadImageAnimFromMemory(".gif", (const unsigned char)gif, sizeof(gif), 25);
+    string gif = readGIF(db, 1);
+    int animFrames;
+    Image imgsof = LoadImageAnimFromMemory(".gif", (unsigned char *)gif.c_str(), gif.size(), &animFrames);
     Texture2D SOF = LoadTextureFromImage(imgsof);
     while (!WindowShouldClose())
     {
@@ -266,16 +310,11 @@ int main()
                 UnloadDroppedFiles(droppedFiles); // Unload filepaths from memory
             }
         }
-    updateInfo:
+
         if (nowTrack != DropdownBox006Active + 1)
         {
-            nowTrack = DropdownBox006Active + 1;
-            speedTrack = 1;
             ToggleGroup006Active = 1;
-            string *musics = ReadMusicContent(nowTrack, db);
-            nowMusic = LoadMusicStreamFromMemory(".wav", (unsigned char *)musics->c_str(), musics->size());
-            nowMusic.looping = false;
-            cerr << "track" << nowTrack << endl;
+            updateTrack(nowTrack, DropdownBox006Active, speedTrack, db, nowMusic, ToggleGroup006Active);
         }
         if (ToggleGroup006Active != action)
         {
@@ -285,7 +324,7 @@ int main()
 
         if (IsPlaying && !IsMusicStreamPlaying(nowMusic) && action == 2)
         {
-
+            ProgressBar005Value = 0.0f;
             if (AP)
             {
                 DropdownBox006Active++;
@@ -293,7 +332,8 @@ int main()
                 IsPlaying = false;
                 ToggleGroup006Active = 2;
                 action = 2;
-                goto updateInfo;
+                updateTrack(nowTrack, DropdownBox006Active, speedTrack, db, nowMusic, ToggleGroup006Active);
+                action = ToggleGroup006Active;
             }
             else
             {
@@ -304,12 +344,16 @@ int main()
         {
             PauseMusicStream(nowMusic);
             IsPlaying = false;
-            cerr << "stop playing";
+            cerr << "stop playing\n";
+            cerr << ProgressBar005Value;
         }
         if (action == 0)
         {
 
             SeekMusicStream(nowMusic, 0);
+            ProgressBar005Value = 0.0f;
+            action = 1;
+            ToggleGroup006Active = 1;
         }
         if (action == 3)
         {
@@ -333,9 +377,19 @@ int main()
             }
         }
 
-        if (IsMusicValid(nowMusic))
+        if (IsMusicValid(nowMusic) && action == 2)
         {
-            ProgressBar005Value = GetMusicTimePlayed(nowMusic) / musicLength;
+            float playedTime = GetMusicTimePlayed(nowMusic);
+
+            if (!IsMusicStreamPlaying(nowMusic) && playedTime < 0.01f)
+            {
+                ProgressBar005Value = 0.0f;
+            }
+            else
+            {
+                ProgressBar005Value = playedTime / musicLength;
+            }
+
             UpdateMusicStream(nowMusic);
         }
         SetMasterVolume(masterVol);
@@ -369,7 +423,15 @@ int main()
         DrawTexture(SOF, 400, 400, WHITE);
         DrawRectangleRounded((Rectangle){1100, 100, 450, 800}, 0.2, 150, WHITE);
         DrawRectangleRounded((Rectangle){1080, 80, 490, 840}, 0.2, 150, Color{255, 255, 255, 120});
-
+        DrawRectangleLines(37, 420, 120, 60, BLACK);
+        for (int i = 0; i < 120; i++)
+        {
+            DrawLine(37 + i, 450 - (int)(averageVolume[i] * 32), 37 + i, 450, BLUE);
+        }
+        for (int i = 0; i < 120; i++)
+        {
+            DrawLine(37 + i, 450, 37 + i, 450 + (int)(averageVolume[i] * 32), BLUE);
+        }
         DrawTexture(DropImage, 1225, 400, BLACK);
         GuiUnlock();
 
