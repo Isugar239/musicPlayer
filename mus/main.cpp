@@ -182,7 +182,7 @@ int main()
     const int screenHeight = 1000;
     InitWindow(screenWidth, screenHeight, "SoundOverFlow");
     // LoadFont("C:\\Users\\zakharoviz.28\\Downloads\\GenericMobileSystemNuevo.ttf");
-    GuiLoadStyle("C:\\Users\\zakharoviz.28\\Downloads\\style_enefete.rgs");
+    GuiLoadStyle(".\\style_ashes.rgs");
     // init music player---------------------------------------------------------------------
     InitAudioDevice();
     SetMasterVolume(1);
@@ -206,18 +206,7 @@ int main()
     }
 
     // init layouts------------------------------------------------------------------------------
-    Rectangle layoutRecs[8] = {
 
-        (Rectangle){16, 40, 160, 608},
-        (Rectangle){0, 5, 1600, 1000},
-        (Rectangle){30, 160, 120, 16},
-        (Rectangle){37, 585, 120, 16},
-        (Rectangle){27, 106, 120, 24},
-        (Rectangle){34, 610, 40, 24},
-        (Rectangle){40, 191, 113, 23},
-        (Rectangle){27, 130, 120, 24},
-
-    };
     vector<wstring> winapifiles;
 
     static float *delayBuffer = NULL;
@@ -401,8 +390,8 @@ int main()
         //----------------------------------------------------------------------------------
         if (DropdownBox006EditMode)
             GuiLock();
-        GuiGroupBox(layoutRecs[1], "Music player");
-        if (GuiButton(layoutRecs[2], "#05#Open music"))
+        GuiGroupBox((Rectangle){0, 5, 1600, 1000}, "Music player");
+        if (GuiButton((Rectangle){37, 160, 120, 16}, "#05#Open music"))
         {
             OpenFileDialog(winapifiles);
             LoadFilepathToSQL(WStringToString(winapifiles.back()).c_str(), db);
@@ -411,11 +400,11 @@ int main()
         }
 
         // SliderBar004Value = GuiSliderBar(layoutRecs[2], NULL, NULL, SliderBar004Value, 0, 100);
-        GuiProgressBar(layoutRecs[3], NULL, NULL, &ProgressBar005Value, 0, 1);
-        GuiLabel(layoutRecs[4], "Master volume");
-        GuiSlider(layoutRecs[7], NULL, NULL, &masterVol, 0, 1);
-        GuiToggleGroup(layoutRecs[5], "#129#;#132#;#131#;#134#", &ToggleGroup006Active);
-        if (GuiDropdownBox(layoutRecs[6], getTrackNames(tracks).c_str(), &DropdownBox006Active, DropdownBox006EditMode))
+        GuiProgressBar((Rectangle){37, 585, 120, 16}, NULL, NULL, &ProgressBar005Value, 0, 1);
+        GuiLabel((Rectangle){37, 106, 120, 10}, "Master volume");
+        GuiSlider((Rectangle){37, 120, 120, 24}, NULL, NULL, &masterVol, 0, 1);
+        GuiToggleGroup((Rectangle){37, 610, 28, 28}, "#129#;#132#;#131#;#134#", &ToggleGroup006Active);
+        if (GuiDropdownBox((Rectangle){37, 191, 120, 23}, getTrackNames(tracks).c_str(), &DropdownBox006Active, DropdownBox006EditMode))
             DropdownBox006EditMode = !DropdownBox006EditMode;
         GuiSpinner((Rectangle){37, 650, 120, 16}, "speed", &speedTrack, 1, 4, false);
         GuiCheckBox((Rectangle){37, 500, 120, 16}, "AutoPlay", &AP);
