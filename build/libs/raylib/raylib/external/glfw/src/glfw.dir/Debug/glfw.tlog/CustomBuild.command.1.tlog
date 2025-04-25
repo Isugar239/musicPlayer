@@ -1,0 +1,10 @@
+^C:\USERS\ZAKHAR\DOCUMENTS\MP\LIBS\RAYLIB-5.5\SRC\EXTERNAL\GLFW\SRC\CMAKELISTS.TXT
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/Zakhar/Documents/mp -BC:/Users/Zakhar/Documents/mp/build --check-stamp-file C:/Users/Zakhar/Documents/mp/build/libs/raylib/raylib/external/glfw/src/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

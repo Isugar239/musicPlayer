@@ -1,0 +1,100 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CMakePredefinedTargets", "CMakePredefinedTargets", "{B2A94891-16B0-33A0-B12E-269CD795A520}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ALL_BUILD", "ALL_BUILD.vcxproj", "{CCAE53F2-802B-3E5E-9411-2EBFDAEBEE73}"
+	ProjectSection(ProjectDependencies) = postProject
+		{2E4BD619-6795-3C34-BF56-5C07E25EC411} = {2E4BD619-6795-3C34-BF56-5C07E25EC411}
+		{12213367-AB85-3E11-9122-EA051C7D396E} = {12213367-AB85-3E11-9122-EA051C7D396E}
+		{3EE54510-FCBE-30B6-B873-A84DB80BAFF2} = {3EE54510-FCBE-30B6-B873-A84DB80BAFF2}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "INSTALL", "INSTALL.vcxproj", "{BF43DCF6-AABE-3892-BC02-AF88A7693837}"
+	ProjectSection(ProjectDependencies) = postProject
+		{CCAE53F2-802B-3E5E-9411-2EBFDAEBEE73} = {CCAE53F2-802B-3E5E-9411-2EBFDAEBEE73}
+		{12213367-AB85-3E11-9122-EA051C7D396E} = {12213367-AB85-3E11-9122-EA051C7D396E}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PACKAGE", "PACKAGE.vcxproj", "{4E2CAF37-B575-3780-B954-5320BA4DCD8C}"
+	ProjectSection(ProjectDependencies) = postProject
+		{CCAE53F2-802B-3E5E-9411-2EBFDAEBEE73} = {CCAE53F2-802B-3E5E-9411-2EBFDAEBEE73}
+		{12213367-AB85-3E11-9122-EA051C7D396E} = {12213367-AB85-3E11-9122-EA051C7D396E}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SQLiteCpp", "SQLiteCpp.vcxproj", "{2E4BD619-6795-3C34-BF56-5C07E25EC411}"
+	ProjectSection(ProjectDependencies) = postProject
+		{12213367-AB85-3E11-9122-EA051C7D396E} = {12213367-AB85-3E11-9122-EA051C7D396E}
+		{3EE54510-FCBE-30B6-B873-A84DB80BAFF2} = {3EE54510-FCBE-30B6-B873-A84DB80BAFF2}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ZERO_CHECK", "..\..\\ZERO_CHECK.vcxproj", "{12213367-AB85-3E11-9122-EA051C7D396E}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "sqlite3", "sqlite3\sqlite3.vcxproj", "{3EE54510-FCBE-30B6-B873-A84DB80BAFF2}"
+	ProjectSection(ProjectDependencies) = postProject
+		{12213367-AB85-3E11-9122-EA051C7D396E} = {12213367-AB85-3E11-9122-EA051C7D396E}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|win32 = Debug|win32
+		Release|win32 = Release|win32
+		MinSizeRel|win32 = MinSizeRel|win32
+		RelWithDebInfo|win32 = RelWithDebInfo|win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CCAE53F2-802B-3E5E-9411-2EBFDAEBEE73}.Debug|win32.ActiveCfg = Debug|win32
+		{CCAE53F2-802B-3E5E-9411-2EBFDAEBEE73}.Debug|win32.Build.0 = Debug|win32
+		{CCAE53F2-802B-3E5E-9411-2EBFDAEBEE73}.Release|win32.ActiveCfg = Release|win32
+		{CCAE53F2-802B-3E5E-9411-2EBFDAEBEE73}.Release|win32.Build.0 = Release|win32
+		{CCAE53F2-802B-3E5E-9411-2EBFDAEBEE73}.MinSizeRel|win32.ActiveCfg = MinSizeRel|win32
+		{CCAE53F2-802B-3E5E-9411-2EBFDAEBEE73}.MinSizeRel|win32.Build.0 = MinSizeRel|win32
+		{CCAE53F2-802B-3E5E-9411-2EBFDAEBEE73}.RelWithDebInfo|win32.ActiveCfg = RelWithDebInfo|win32
+		{CCAE53F2-802B-3E5E-9411-2EBFDAEBEE73}.RelWithDebInfo|win32.Build.0 = RelWithDebInfo|win32
+		{BF43DCF6-AABE-3892-BC02-AF88A7693837}.Debug|win32.ActiveCfg = Debug|win32
+		{BF43DCF6-AABE-3892-BC02-AF88A7693837}.Release|win32.ActiveCfg = Release|win32
+		{BF43DCF6-AABE-3892-BC02-AF88A7693837}.MinSizeRel|win32.ActiveCfg = MinSizeRel|win32
+		{BF43DCF6-AABE-3892-BC02-AF88A7693837}.RelWithDebInfo|win32.ActiveCfg = RelWithDebInfo|win32
+		{4E2CAF37-B575-3780-B954-5320BA4DCD8C}.Debug|win32.ActiveCfg = Debug|win32
+		{4E2CAF37-B575-3780-B954-5320BA4DCD8C}.Release|win32.ActiveCfg = Release|win32
+		{4E2CAF37-B575-3780-B954-5320BA4DCD8C}.MinSizeRel|win32.ActiveCfg = MinSizeRel|win32
+		{4E2CAF37-B575-3780-B954-5320BA4DCD8C}.RelWithDebInfo|win32.ActiveCfg = RelWithDebInfo|win32
+		{2E4BD619-6795-3C34-BF56-5C07E25EC411}.Debug|win32.ActiveCfg = Debug|win32
+		{2E4BD619-6795-3C34-BF56-5C07E25EC411}.Debug|win32.Build.0 = Debug|win32
+		{2E4BD619-6795-3C34-BF56-5C07E25EC411}.Release|win32.ActiveCfg = Release|win32
+		{2E4BD619-6795-3C34-BF56-5C07E25EC411}.Release|win32.Build.0 = Release|win32
+		{2E4BD619-6795-3C34-BF56-5C07E25EC411}.MinSizeRel|win32.ActiveCfg = MinSizeRel|win32
+		{2E4BD619-6795-3C34-BF56-5C07E25EC411}.MinSizeRel|win32.Build.0 = MinSizeRel|win32
+		{2E4BD619-6795-3C34-BF56-5C07E25EC411}.RelWithDebInfo|win32.ActiveCfg = RelWithDebInfo|win32
+		{2E4BD619-6795-3C34-BF56-5C07E25EC411}.RelWithDebInfo|win32.Build.0 = RelWithDebInfo|win32
+		{12213367-AB85-3E11-9122-EA051C7D396E}.Debug|win32.ActiveCfg = Debug|win32
+		{12213367-AB85-3E11-9122-EA051C7D396E}.Debug|win32.Build.0 = Debug|win32
+		{12213367-AB85-3E11-9122-EA051C7D396E}.Release|win32.ActiveCfg = Release|win32
+		{12213367-AB85-3E11-9122-EA051C7D396E}.Release|win32.Build.0 = Release|win32
+		{12213367-AB85-3E11-9122-EA051C7D396E}.MinSizeRel|win32.ActiveCfg = MinSizeRel|win32
+		{12213367-AB85-3E11-9122-EA051C7D396E}.MinSizeRel|win32.Build.0 = MinSizeRel|win32
+		{12213367-AB85-3E11-9122-EA051C7D396E}.RelWithDebInfo|win32.ActiveCfg = RelWithDebInfo|win32
+		{12213367-AB85-3E11-9122-EA051C7D396E}.RelWithDebInfo|win32.Build.0 = RelWithDebInfo|win32
+		{3EE54510-FCBE-30B6-B873-A84DB80BAFF2}.Debug|win32.ActiveCfg = Debug|win32
+		{3EE54510-FCBE-30B6-B873-A84DB80BAFF2}.Debug|win32.Build.0 = Debug|win32
+		{3EE54510-FCBE-30B6-B873-A84DB80BAFF2}.Release|win32.ActiveCfg = Release|win32
+		{3EE54510-FCBE-30B6-B873-A84DB80BAFF2}.Release|win32.Build.0 = Release|win32
+		{3EE54510-FCBE-30B6-B873-A84DB80BAFF2}.MinSizeRel|win32.ActiveCfg = MinSizeRel|win32
+		{3EE54510-FCBE-30B6-B873-A84DB80BAFF2}.MinSizeRel|win32.Build.0 = MinSizeRel|win32
+		{3EE54510-FCBE-30B6-B873-A84DB80BAFF2}.RelWithDebInfo|win32.ActiveCfg = RelWithDebInfo|win32
+		{3EE54510-FCBE-30B6-B873-A84DB80BAFF2}.RelWithDebInfo|win32.Build.0 = RelWithDebInfo|win32
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{CCAE53F2-802B-3E5E-9411-2EBFDAEBEE73} = {B2A94891-16B0-33A0-B12E-269CD795A520}
+		{BF43DCF6-AABE-3892-BC02-AF88A7693837} = {B2A94891-16B0-33A0-B12E-269CD795A520}
+		{4E2CAF37-B575-3780-B954-5320BA4DCD8C} = {B2A94891-16B0-33A0-B12E-269CD795A520}
+		{12213367-AB85-3E11-9122-EA051C7D396E} = {B2A94891-16B0-33A0-B12E-269CD795A520}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3FF9F6D8-E34E-3DA9-91E4-A68B93827AD2}
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

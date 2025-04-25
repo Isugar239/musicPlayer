@@ -1,0 +1,125 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"install"
+		],
+		"files" : 
+		[
+			"libs/SQLiteCpp/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 368,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 373,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 374,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 375,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 386,
+				"parent" : 0
+			}
+		]
+	},
+	"installers" : 
+	[
+		{
+			"backtrace" : 1,
+			"component" : "libraries",
+			"destination" : "lib",
+			"paths" : 
+			[
+				"libs/SQLiteCpp/libSQLiteCpp.a"
+			],
+			"targetId" : "SQLiteCpp::@ec7afec0f73bb1c67123",
+			"targetIndex" : 1,
+			"type" : "target"
+		},
+		{
+			"backtrace" : 2,
+			"component" : "headers",
+			"destination" : "include",
+			"paths" : 
+			[
+				{
+					"from" : "libs/SQLiteCpp/include",
+					"to" : "."
+				}
+			],
+			"type" : "directory"
+		},
+		{
+			"backtrace" : 3,
+			"component" : "Unspecified",
+			"destination" : "lib/cmake/SQLiteCpp",
+			"exportName" : "SQLiteCppTargets",
+			"exportTargets" : 
+			[
+				{
+					"id" : "sqlite3::@5a704e1f9ce622c616c1",
+					"index" : 4
+				},
+				{
+					"id" : "SQLiteCpp::@ec7afec0f73bb1c67123",
+					"index" : 1
+				}
+			],
+			"paths" : 
+			[
+				"libs/SQLiteCpp/CMakeFiles/Export/31d559fcedc0800e90eb93f071f3b915/SQLiteCppTargets.cmake"
+			],
+			"type" : "export"
+		},
+		{
+			"backtrace" : 4,
+			"component" : "Unspecified",
+			"destination" : "share/SQLiteCpp",
+			"paths" : 
+			[
+				"libs/SQLiteCpp/package.xml"
+			],
+			"type" : "file"
+		},
+		{
+			"backtrace" : 5,
+			"component" : "Unspecified",
+			"destination" : "lib/cmake/SQLiteCpp",
+			"paths" : 
+			[
+				"build/libs/SQLiteCpp/cmake/SQLiteCppConfig.cmake",
+				"build/libs/SQLiteCpp/cmake/SQLiteCppConfigVersion.cmake"
+			],
+			"type" : "file"
+		}
+	],
+	"paths" : 
+	{
+		"build" : "libs/SQLiteCpp",
+		"source" : "libs/SQLiteCpp"
+	}
+}

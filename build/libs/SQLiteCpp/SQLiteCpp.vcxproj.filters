@@ -1,0 +1,154 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\Users\Zakhar\Documents\mp\libs\SQLiteCpp\src\Backup.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Zakhar\Documents\mp\libs\SQLiteCpp\src\Column.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Zakhar\Documents\mp\libs\SQLiteCpp\src\Database.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Zakhar\Documents\mp\libs\SQLiteCpp\src\Exception.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Zakhar\Documents\mp\libs\SQLiteCpp\src\Savepoint.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Zakhar\Documents\mp\libs\SQLiteCpp\src\Statement.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Zakhar\Documents\mp\libs\SQLiteCpp\src\Transaction.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="C:\Users\Zakhar\Documents\mp\libs\SQLiteCpp\include\SQLiteCpp\SQLiteCpp.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Zakhar\Documents\mp\libs\SQLiteCpp\include\SQLiteCpp\Assertion.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Zakhar\Documents\mp\libs\SQLiteCpp\include\SQLiteCpp\Backup.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Zakhar\Documents\mp\libs\SQLiteCpp\include\SQLiteCpp\Column.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Zakhar\Documents\mp\libs\SQLiteCpp\include\SQLiteCpp\Database.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Zakhar\Documents\mp\libs\SQLiteCpp\include\SQLiteCpp\Exception.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Zakhar\Documents\mp\libs\SQLiteCpp\include\SQLiteCpp\Savepoint.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Zakhar\Documents\mp\libs\SQLiteCpp\include\SQLiteCpp\Statement.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Zakhar\Documents\mp\libs\SQLiteCpp\include\SQLiteCpp\Transaction.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Zakhar\Documents\mp\libs\SQLiteCpp\include\SQLiteCpp\VariadicBind.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Zakhar\Documents\mp\libs\SQLiteCpp\include\SQLiteCpp\ExecuteMany.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Zakhar\Documents\mp\libs\SQLiteCpp\cmake\SQLiteCppConfig.cmake.in">
+      <Filter>scripts</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\Zakhar\Documents\mp\libs\SQLiteCpp\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="C:\Users\Zakhar\Documents\mp\libs\SQLiteCpp\README.md">
+      <Filter>doc</Filter>
+    </None>
+    <None Include="C:\Users\Zakhar\Documents\mp\libs\SQLiteCpp\LICENSE.txt">
+      <Filter>doc</Filter>
+    </None>
+    <None Include="C:\Users\Zakhar\Documents\mp\libs\SQLiteCpp\CHANGELOG.md">
+      <Filter>doc</Filter>
+    </None>
+    <None Include="C:\Users\Zakhar\Documents\mp\libs\SQLiteCpp\TODO.txt">
+      <Filter>doc</Filter>
+    </None>
+    <None Include="C:\Users\Zakhar\Documents\mp\libs\SQLiteCpp\.editorconfig">
+      <Filter>scripts</Filter>
+    </None>
+    <None Include="C:\Users\Zakhar\Documents\mp\libs\SQLiteCpp\.gitbugtraq">
+      <Filter>scripts</Filter>
+    </None>
+    <None Include="C:\Users\Zakhar\Documents\mp\libs\SQLiteCpp\.github\dependabot.yml">
+      <Filter>scripts</Filter>
+    </None>
+    <None Include="C:\Users\Zakhar\Documents\mp\libs\SQLiteCpp\.github\workflows\cmake.yml">
+      <Filter>scripts</Filter>
+    </None>
+    <None Include="C:\Users\Zakhar\Documents\mp\libs\SQLiteCpp\.github\workflows\cmake_builtin_lib.yml">
+      <Filter>scripts</Filter>
+    </None>
+    <None Include="C:\Users\Zakhar\Documents\mp\libs\SQLiteCpp\.github\workflows\cmake_subdir_example.yml">
+      <Filter>scripts</Filter>
+    </None>
+    <None Include="C:\Users\Zakhar\Documents\mp\libs\SQLiteCpp\.github\workflows\meson.yml">
+      <Filter>scripts</Filter>
+    </None>
+    <None Include="C:\Users\Zakhar\Documents\mp\libs\SQLiteCpp\.gitignore">
+      <Filter>scripts</Filter>
+    </None>
+    <None Include="C:\Users\Zakhar\Documents\mp\libs\SQLiteCpp\.gitmodules">
+      <Filter>scripts</Filter>
+    </None>
+    <None Include="C:\Users\Zakhar\Documents\mp\libs\SQLiteCpp\.travis.yml">
+      <Filter>scripts</Filter>
+    </None>
+    <None Include="C:\Users\Zakhar\Documents\mp\libs\SQLiteCpp\appveyor.yml">
+      <Filter>scripts</Filter>
+    </None>
+    <None Include="C:\Users\Zakhar\Documents\mp\libs\SQLiteCpp\build.bat">
+      <Filter>scripts</Filter>
+    </None>
+    <None Include="C:\Users\Zakhar\Documents\mp\libs\SQLiteCpp\build.sh">
+      <Filter>scripts</Filter>
+    </None>
+    <None Include="C:\Users\Zakhar\Documents\mp\libs\SQLiteCpp\cmake\FindSQLite3.cmake">
+      <Filter>scripts</Filter>
+    </None>
+    <None Include="C:\Users\Zakhar\Documents\mp\libs\SQLiteCpp\cpplint.py">
+      <Filter>scripts</Filter>
+    </None>
+    <None Include="C:\Users\Zakhar\Documents\mp\libs\SQLiteCpp\Doxyfile">
+      <Filter>scripts</Filter>
+    </None>
+    <None Include="C:\Users\Zakhar\Documents\mp\libs\SQLiteCpp\meson.build">
+      <Filter>scripts</Filter>
+    </None>
+    <None Include="C:\Users\Zakhar\Documents\mp\libs\SQLiteCpp\meson_options.txt">
+      <Filter>scripts</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <XML Include="C:\Users\Zakhar\Documents\mp\libs\SQLiteCpp\package.xml">
+      <Filter>scripts</Filter>
+    </XML>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="doc">
+      <UniqueIdentifier>{41D4432B-EFAC-3B3A-B566-35DBD092119F}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include">
+      <UniqueIdentifier>{C54B396C-5591-3869-A93E-27F17E25F035}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="scripts">
+      <UniqueIdentifier>{B4016F4B-E601-3057-8534-C316A5375585}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{82963D3C-2D78-3579-91A6-D03D8DA8FD92}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

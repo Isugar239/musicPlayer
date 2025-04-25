@@ -1,0 +1,13 @@
+{
+	"InstallScripts" : 
+	[
+		"C:/Users/Zakhar/Documents/mp/build/cmake_install.cmake",
+		"C:/Users/Zakhar/Documents/mp/build/libs/SQLiteCpp/cmake_install.cmake",
+		"C:/Users/Zakhar/Documents/mp/build/libs/SQLiteCpp/sqlite3/cmake_install.cmake",
+		"C:/Users/Zakhar/Documents/mp/build/libs/raylib/cmake_install.cmake",
+		"C:/Users/Zakhar/Documents/mp/build/libs/raylib/raylib/cmake_install.cmake",
+		"C:/Users/Zakhar/Documents/mp/build/libs/raylib/raylib/external/glfw/cmake_install.cmake",
+		"C:/Users/Zakhar/Documents/mp/build/libs/raylib/raylib/external/glfw/src/cmake_install.cmake"
+	],
+	"Parallel" : false
+}

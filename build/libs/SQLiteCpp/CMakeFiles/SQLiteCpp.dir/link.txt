@@ -1,0 +1,2 @@
+C:/Users/Zakhar/gcc/bin/ar.exe qc libSQLiteCpp.a CMakeFiles/SQLiteCpp.dir/src/Backup.cpp.obj CMakeFiles/SQLiteCpp.dir/src/Column.cpp.obj CMakeFiles/SQLiteCpp.dir/src/Database.cpp.obj CMakeFiles/SQLiteCpp.dir/src/Exception.cpp.obj CMakeFiles/SQLiteCpp.dir/src/Savepoint.cpp.obj CMakeFiles/SQLiteCpp.dir/src/Statement.cpp.obj CMakeFiles/SQLiteCpp.dir/src/Transaction.cpp.obj
+C:/Users/Zakhar/gcc/bin/ranlib.exe libSQLiteCpp.a

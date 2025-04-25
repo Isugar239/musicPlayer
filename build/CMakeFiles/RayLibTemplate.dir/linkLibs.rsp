@@ -1,0 +1,1 @@
+ libs/raylib/raylib/libraylib.a -lpropsys -lshlwapi -lcomctl32 libs/SQLiteCpp/libSQLiteCpp.a libs/SQLiteCpp/sqlite3/libsqlite3.a -lpthread -lopengl32 -lglu32 -lwinmm -lpthread -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32 

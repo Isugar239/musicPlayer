@@ -1,0 +1,15 @@
+# CMake generation dependency list for this directory.
+C:/Program Files/CMake/share/cmake-4.0/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake
+C:/Program Files/CMake/share/cmake-4.0/Modules/CMakeDependentOption.cmake
+C:/Program Files/CMake/share/cmake-4.0/Modules/CheckCCompilerFlag.cmake
+C:/Program Files/CMake/share/cmake-4.0/Modules/CheckCSourceCompiles.cmake
+C:/Program Files/CMake/share/cmake-4.0/Modules/Internal/CheckCompilerFlag.cmake
+C:/Program Files/CMake/share/cmake-4.0/Modules/Internal/CheckFlagCommonConfig.cmake
+C:/Program Files/CMake/share/cmake-4.0/Modules/Internal/CheckSourceCompiles.cmake
+C:/Users/Zakhar/Documents/mp/libs/raylib-5.5/CMakeLists.txt
+C:/Users/Zakhar/Documents/mp/libs/raylib-5.5/CMakeOptions.txt
+C:/Users/Zakhar/Documents/mp/libs/raylib-5.5/cmake/AddIfFlagCompiles.cmake
+C:/Users/Zakhar/Documents/mp/libs/raylib-5.5/cmake/CompilerFlags.cmake
+C:/Users/Zakhar/Documents/mp/libs/raylib-5.5/cmake/EnumOption.cmake
+C:/Users/Zakhar/Documents/mp/libs/raylib-5.5/cmake/ParseConfigHeader.cmake
+C:/Users/Zakhar/Documents/mp/libs/raylib-5.5/cmake/Uninstall.cmake

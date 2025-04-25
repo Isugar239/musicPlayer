@@ -1,0 +1,266 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1,
+						3
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0
+					]
+				},
+				{
+					"build" : "libs/SQLiteCpp",
+					"childIndexes" : 
+					[
+						2
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-libs.SQLiteCpp-Debug-bd005ddc1ec7e87f59f4.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.5"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 1,
+					"source" : "libs/SQLiteCpp",
+					"targetIndexes" : 
+					[
+						1
+					]
+				},
+				{
+					"build" : "libs/SQLiteCpp/sqlite3",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-libs.SQLiteCpp.sqlite3-Debug-27ba7fbd541ffdd34687.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.5"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 1,
+					"source" : "libs/SQLiteCpp/sqlite3",
+					"targetIndexes" : 
+					[
+						4
+					]
+				},
+				{
+					"build" : "libs/raylib",
+					"childIndexes" : 
+					[
+						4
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-libs.raylib-Debug-8ead1fafc18f49fa8856.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.5"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 2,
+					"source" : "libs/raylib-5.5",
+					"targetIndexes" : 
+					[
+						5
+					]
+				},
+				{
+					"build" : "libs/raylib/raylib",
+					"childIndexes" : 
+					[
+						5
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-libs.raylib.raylib-Debug-c05a41a22e8460882462.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.5"
+					},
+					"parentIndex" : 3,
+					"projectIndex" : 2,
+					"source" : "libs/raylib-5.5/src",
+					"targetIndexes" : 
+					[
+						3
+					]
+				},
+				{
+					"build" : "libs/raylib/raylib/external/glfw",
+					"childIndexes" : 
+					[
+						6
+					],
+					"jsonFile" : "directory-libs.raylib.raylib.external.glfw-Debug-d71a80667b93fa4256c0.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.4"
+					},
+					"parentIndex" : 4,
+					"projectIndex" : 3,
+					"source" : "libs/raylib-5.5/src/external/glfw"
+				},
+				{
+					"build" : "libs/raylib/raylib/external/glfw/src",
+					"jsonFile" : "directory-libs.raylib.raylib.external.glfw.src-Debug-cdab0cf2332f8493e06d.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.4"
+					},
+					"parentIndex" : 5,
+					"projectIndex" : 3,
+					"source" : "libs/raylib-5.5/src/external/glfw/src",
+					"targetIndexes" : 
+					[
+						2,
+						6
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"childIndexes" : 
+					[
+						1,
+						2
+					],
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "SoundOverFlow",
+					"targetIndexes" : 
+					[
+						0
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						1,
+						2
+					],
+					"name" : "SQLiteCpp",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						1,
+						4
+					]
+				},
+				{
+					"childIndexes" : 
+					[
+						3
+					],
+					"directoryIndexes" : 
+					[
+						3,
+						4
+					],
+					"name" : "raylib",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						3,
+						5
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						5,
+						6
+					],
+					"name" : "GLFW",
+					"parentIndex" : 2,
+					"targetIndexes" : 
+					[
+						2,
+						6
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "RayLibTemplate::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-RayLibTemplate-Debug-f646e579af08d6ce8a00.json",
+					"name" : "RayLibTemplate",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "SQLiteCpp::@ec7afec0f73bb1c67123",
+					"jsonFile" : "target-SQLiteCpp-Debug-98415a55af29e8639b3d.json",
+					"name" : "SQLiteCpp",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 6,
+					"id" : "glfw::@748cfb7de3ab8e0bc04d",
+					"jsonFile" : "target-glfw-Debug-532a135b3b49002c7519.json",
+					"name" : "glfw",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "raylib::@c433a9b36bd4eeacb31c",
+					"jsonFile" : "target-raylib-Debug-965de7b0ec860cbf5271.json",
+					"name" : "raylib",
+					"projectIndex" : 2
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "sqlite3::@5a704e1f9ce622c616c1",
+					"jsonFile" : "target-sqlite3-Debug-a4e66751c8c1a56d0a09.json",
+					"name" : "sqlite3",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "uninstall::@5281922ef07e3d7a5599",
+					"jsonFile" : "target-uninstall-Debug-e78aba4ad7f8df76adeb.json",
+					"name" : "uninstall",
+					"projectIndex" : 2
+				},
+				{
+					"directoryIndex" : 6,
+					"id" : "update_mappings::@748cfb7de3ab8e0bc04d",
+					"jsonFile" : "target-update_mappings-Debug-2eac2946489f67d7f65e.json",
+					"name" : "update_mappings",
+					"projectIndex" : 3
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "C:/Users/Zakhar/Documents/mp/build",
+		"source" : "C:/Users/Zakhar/Documents/mp"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 8
+	}
+}
