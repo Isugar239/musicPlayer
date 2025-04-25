@@ -229,5 +229,4 @@ CMakeFiles/RayLibTemplate.dir/mus/main.cpp.obj: \
  C:/Users/Zakhar/gcc/x86_64-w64-mingw32/include/stdarg.h \
  C:/Users/Zakhar/gcc/x86_64-w64-mingw32/include/_mingw_stdarg.h \
  C:/Users/Zakhar/gcc/include/c++/14.2.0/math.h \
- C:/Users/Zakhar/Documents/mp/mus/helper.h \
- C:/Users/Zakhar/Documents/mp/mus/main.h
+ C:/Users/Zakhar/Documents/mp/mus/helper.h

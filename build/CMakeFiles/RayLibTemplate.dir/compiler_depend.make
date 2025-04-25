@@ -406,7 +406,6 @@ CMakeFiles/RayLibTemplate.dir/mus/main.cpp.obj: C:/Users/Zakhar/Documents/mp/mus
   C:/Users/Zakhar/Documents/mp/libs/raylib-5.5/src/raygui.h \
   C:/Users/Zakhar/Documents/mp/libs/raylib-5.5/src/raylib.h \
   C:/Users/Zakhar/Documents/mp/mus/helper.h \
-  C:/Users/Zakhar/Documents/mp/mus/main.h \
   C:/Users/Zakhar/gcc/include/c++/14.2.0/backward/auto_ptr.h \
   C:/Users/Zakhar/gcc/include/c++/14.2.0/backward/binders.h \
   C:/Users/Zakhar/gcc/include/c++/14.2.0/bit \
@@ -887,8 +886,6 @@ C:/Users/Zakhar/Documents/mp/libs/SQLiteCpp/include/SQLiteCpp/Utils.h:
 C:/Users/Zakhar/gcc/include/c++/14.2.0/exception:
 
 C:/Users/Zakhar/gcc/include/c++/14.2.0/ext/alloc_traits.h:
-
-C:/Users/Zakhar/Documents/mp/mus/main.h:
 
 C:/Users/Zakhar/gcc/include/c++/14.2.0/ext/atomicity.h:
 
