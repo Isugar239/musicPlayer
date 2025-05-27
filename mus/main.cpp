@@ -42,34 +42,7 @@ string readGIF(SQLite::Database &db, int gifId)
     cerr << gifka.size();
     return gifka;
 }
-string getTrackNames(const vector<Track> &tracks)
-{
-    string names = "";
-    for (auto &t : tracks)
-    {
-        names += t.name + ";";
-    }
-    names[names.size() - 1] = '\0';
-    return names;
-}
 
-vector<Track> getTracks(Database &db)
-{
-    SQLite::Statement query(db, "SELECT id, name_music FROM music");
-    vector<Track> tempTracks;
-    while (query.executeStep())
-    {
-        // Demonstrate how to get some typed column value
-        int id = query.getColumn(0);
-        string name = query.getColumn(1).getString();
-
-        std::cout << "row: " << id << ", " << name << std::endl;
-
-        tempTracks.push_back({(unsigned int)id, name});
-    }
-    query.reset();
-    return tempTracks;
-}
 void ProcessAudio(void *buffer, unsigned int frames)
 {
     float *samples = (float *)buffer; // Samples internally stored as <float>s
@@ -102,18 +75,6 @@ unsigned int findTrackId(const std::string &trackName, const std::vector<Track> 
         }
     }
     throw std::runtime_error("Track not found");
-}
-
-void InserMusicBinary(SQLite::Database &db, std::string &MusTex, string nameoftrack)
-{
-    Transaction transaction(db);
-    Statement insertMusicQuery{db, "INSERT INTO music(music, name_music) VALUES (?, ?)"};
-    insertMusicQuery.bind(1, MusTex.c_str(), MusTex.size());
-    insertMusicQuery.bind(2, nameoftrack);
-    insertMusicQuery.exec();
-    insertMusicQuery.reset();
-
-    transaction.commit();
 }
 
 
@@ -150,25 +111,7 @@ void updateTrack(int &nowTrack, int &DropdownBox006Active, int &speedTrack, SQLi
     nowMusic.looping = false;
     cerr << "track" << nowTrack << endl;
 }
-void LoadFilepathToSQL(const char *filepaths, SQLite::Database &db)
-{
-    string MusTex;
-    ifstream in{filepaths, std::ios::binary};
-    char buf[409600];
 
-    while (!in.eof())
-    {
-        in.read(buf, 409600);
-        cout << in.gcount() << '\n';
-        MusTex += string(buf, in.gcount());
-    }
-    // cerr << MusTex;
-    in.close();
-    std::filesystem::path p(filepaths);
-    string nametrack = p.stem().string();
-
-    InserMusicBinary(db, MusTex, nametrack);
-}
 std::string WStringToString(const std::wstring &wstr)
 {
     std::wstring_convert<std::codecvt_utf8<wchar_t>> converter;
@@ -206,6 +149,86 @@ public:
     }
 
 };
+
+class DB{
+    Database db("music.db3", SQLite::OPEN_READWRITE | SQLite::OPEN_CREATE);
+    db.exec(R"(
+    CREATE TABLE IF NOT EXISTS music (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        name_music TEXT,
+        music BLOB
+    );
+    CREATE TABLE IF NOT EXISTS images (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name TEXT,
+    image BLOB
+    );
+)");
+
+
+void InserMusicBinary(SQLite::Database &db, std::string &MusTex, string nameoftrack)
+{
+    Transaction transaction(db);
+    Statement insertMusicQuery{db, "INSERT INTO music(music, name_music) VALUES (?, ?)"};
+    insertMusicQuery.bind(1, MusTex.c_str(), MusTex.size());
+    insertMusicQuery.bind(2, nameoftrack);
+    insertMusicQuery.exec();
+    insertMusicQuery.reset();
+
+    transaction.commit();
+}
+
+void LoadFilepathToSQL(const char *filepaths, SQLite::Database &db)
+{
+    string MusTex;
+    ifstream in{filepaths, std::ios::binary};
+    char buf[409600];
+
+    while (!in.eof())
+    {
+        in.read(buf, 409600);
+        cout << in.gcount() << '\n';
+        MusTex += string(buf, in.gcount());
+    }
+    // cerr << MusTex;
+    in.close();
+    std::filesystem::path p(filepaths);
+    string nametrack = p.stem().string();
+
+    InserMusicBinary(db, MusTex, nametrack);
+}
+string getTrackNames(const vector<Track> &tracks)
+{
+    string names = "";
+    for (auto &t : tracks)
+    {
+        names += t.name + ";";
+    }
+    names[names.size() - 1] = '\0';
+    return names;
+}
+
+vector<Track> getTracks(Database &db)
+{
+    SQLite::Statement query(db, "SELECT id, name_music FROM music");
+    vector<Track> tempTracks;
+    while (query.executeStep())
+    {
+        // Demonstrate how to get some typed column value
+        int id = query.getColumn(0);
+        string name = query.getColumn(1).getString();
+
+        std::cout << "row: " << id << ", " << name << std::endl;
+
+        tempTracks.push_back({(unsigned int)id, name});
+    }
+    query.reset();
+    return tempTracks;
+}
+
+
+}
+
 class button
 {
     string text = "";
@@ -280,19 +303,7 @@ updater.click() int main()
     int frameDelay = 8;
     int frameCounter = 0;
 
-    Database db("music.db3", SQLite::OPEN_READWRITE | SQLite::OPEN_CREATE);
-    db.exec(R"(
-    CREATE TABLE IF NOT EXISTS music (
-        id INTEGER PRIMARY KEY AUTOINCREMENT,
-        name_music TEXT,
-        music BLOB
-    );
-    CREATE TABLE IF NOT EXISTS images (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    name TEXT,
-    image BLOB
-    );
-)");
+
 
     vector<Track> tracks;
     tracks = getTracks(db);
